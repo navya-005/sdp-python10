@@ -1,0 +1,42 @@
+# read an entire text file
+
+%%writefile 1.txt
+'Hi! How are you'
+
+with open('1.txt','r') as f1:
+    print(f1.read())
+
+# append text to a file and display the text
+
+with open('1.txt','a') as f1:
+    print(f1.write('What are you doing today'))
+with open('1.txt','r')as f1:
+    print(f1.read())
+
+# read a file line by line and store it into a list
+
+f2=open('1.txt','r')
+f2.readlines()
+
+# find the longest words
+
+def longest_words():
+    with open('1.txt', 'r') as infile:
+        words = infile.read().split()
+    max_len = len(max(words, key=len))
+    return [word for word in words if len(word) == max_len]
+
+print(longest_words())
+
+# count the number of lines in a text file
+
+f3 = open("1.txt","r") 
+count = 0
+content = f3.read() 
+coList = content.split("\n") 
+  
+for i in coList: 
+    if i: 
+        count += 1
+          
+print("This is the number of lines in the file :",count)
